@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+	div{
+		width:100px;
+		height:100px;
+		background:blue;
+	}
+	div:hover{width:100%;}
+	div.a{
+		transition: width 5s  ease 3s;
+	}
+	div.b{
+		transition-property:width;
+		transition-duration:5s;
+		transition-delay:3s;
+		transition-timing-function: ease;
+	}
+	div.c{
+		transition:all 5s;
+	}
+	div.c:hover{width:100%;height:300px;}
+	div.d{opacity:0.3;}
+	div.d{
+		transition: opacity 2s linear,width 2s ease-in;
+	}
+	div.d:hover{opacity:1;width:100%;}
+</style>
+</head>
+<body>
+<pre>
+基本样式
+div{width:100px;height:100px;background:blue;}
+div:hover{width:100%;}
+</pre>
+
+<div class="a"></div>
+<pre>transition:width 5s ease 3s;</pre>
+<p><b>注释：</b>【合并方式】 鼠标放上 延时3s 宽度在5s变为100%  ease方式 </p>
+<div class="b"></div>
+<p><b>注释：</b>【拆分方式】 鼠标放上 延时3s 宽度在5s变为100%  ease方式 </p>
+<pre>transition-property:width; transition-duration:5s; transition-delay:3s; transition-timing-function: ease;</pre>
+<div class="c"></div>
+<p><b>注释：</b>【所有属性】 鼠标放上  宽度在5s变为100% 高度变为300px </p>
+<pre>transition:all 5s;</pre>
+<div class="d"></div>
+<p><b>注释：</b>【多个属性】 鼠标放上  透明度2s内线性变为1 宽度2s变为100% </p>
+<pre>transition: opacity 2s linear,width 2s ease-in;</pre>
+</body>
+</html>
